@@ -9,3 +9,7 @@ Route::get('/', function () {
 
 
 Route::resource('games', GameController::class);
+
+Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
+
+Route::get('/games/{id}/export-pdf', [GameController::class, 'exportPdf'])->name('games.exportPdf');

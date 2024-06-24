@@ -15,15 +15,29 @@
     @endif
     <div class="row">
         <div class="col-12">
-            <div class="table-responsive">
+            <div class="table-responsive  rounded-3">
                     <table class="table table-bordered table-hover">
-                        <thead>
+                        <thead class="table-secondary">
                             <tr>
                                 <th>#</th>
-                                <th>NOMBRE</th>
-                                <th>NIVELES</th>
-                                <th>LANZAMIENTO</th>
-                                <th>IMAGEN</th>
+                                <th>REGISTRO ABKC</th>
+                                <th>NOMBRE DEL PERRO</th>
+                          {{--   <th>FECHA DE NACIMIENTO</th>  --}}
+                                <th>SEXO</th>
+                                <th>NOMBRE DEL DUEÑO</th>
+                                   <th>DIRECCIÓN</th>  
+                           {{--     <th>CIUDAD</th>--}}
+                            {{-- <th>ESTADO</th>--}}
+                           {{--  <th>CORREO</th>  --}}
+                                <th>TELÉFONO</th>
+                           {{-- <th>OTRA RAZA</th>
+                                <th>ESTÁNDAR</th>
+                                <th>SG</th>
+                                <th>BOLSILLO</th>
+                                <th>CLÁSICO</th>--}}
+                                <th>MUESTRA RAZA</th>
+                                <th>COMPROBANTE DE PAGO</th>
+                                <th></th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -32,9 +46,22 @@
                             @foreach ($games as $i => $row)
                                 <tr>
                                     <td>{{$i+1}}</td>
-                                    <td>{{$row->name}}</td>
-                                    <td>{{$row->levels}}</td>
-                                    <td>{{$row->release}}</td>
+                                    <td>{{$row->registroAbkc}}</td>
+                                    <td>{{$row->nombrePerro}}</td>
+                             {{--    <td>{{$row->fnac}}</td>--}}
+                                    <td>{{$row->sexo}}</td>
+                                    <td>{{$row->nomDueno}}</td>
+                                 <td>{{$row->direccion}}</td> 
+                             {{--       <td>{{$row->ciudad}}</td> --}}
+                            {{--    <td>{{$row->estado}}</td> --}}
+                            {{--    <td>{{$row->correo}}</td>--}}
+                                    <td>{{$row->telefono}}</td>
+                            {{--        <td>{{$row->otraRaza}}</td>
+                                    <td>{{$row->estandar}}</td>
+                                    <td>{{$row->sg}}</td>
+                                    <td>{{$row->bolsillo}}</td>
+                                    <td>{{$row->clasico}}</td>--}}
+                                    <td>{{$row->muestraraza}}</td>
                                     <td>
                                         <img class="img-fluid" width="120" max-height="100" src="/storage/{{ $row->image }}">
                                     </td>
@@ -46,7 +73,7 @@
                                     </td>
                                     <td>
                                         <form id="frm_{{$row->id}}" method="POST" action="{{route('games.destroy',$row->id)}}"
-                                            onclick="setInfo({{$row->id}},'{{$row->name}}')">
+                                            onclick="setInfo({{$row->id}},'{{$row->nombrePerro}}')">
                                             @method('DELETE')
                                             @csrf
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalConf" >
@@ -54,6 +81,12 @@
                                                 <i class="fa-solid fa-trash"></i>
                                             </button>
                                         </form>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-info" href="{{route('games.show',$row->id)}}">
+                                            Ver
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -104,7 +137,7 @@
             console.log("Nombre:", name);
 
             btnEliminar.setAttribute('data-id',id);
-            lblNombre.innerHTML = 'Eliminarás el video juego: <b>'+name+'</b>'
+            lblNombre.innerHTML = 'Eliminarás el registro: <b>'+name+'</b>'
         }
 
         btnEliminar.addEventListener('click', () => {
@@ -120,6 +153,3 @@
 
 
 @endsection
-
-
-

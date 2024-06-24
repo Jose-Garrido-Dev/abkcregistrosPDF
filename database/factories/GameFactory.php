@@ -17,9 +17,24 @@ class GameFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word(),
-            'levels' => $this->faker->numberBetween(1,100),
-            'release' => $this->faker->date(),
+            'registroAbkc' => $this->faker->word(),
+            'nombrePerro' => $this->faker->word(),
+            'fnac' => $this->faker->date(),
+            'sexo' => $this->faker->word(),
+            'nomDueno' => $this->faker->name(),
+            'direccion' => $this->faker->address(),
+            'ciudad' => $this->faker->city(),
+            'estado' => $this->faker->city(),
+            'correo' => $this->faker->unique()->safeEmail,
+            'telefono' => $this->faker->phoneNumber(),
+            'otraRaza' => $this->faker->word(),
+            'estandar' => $this->faker->word(),
+            'sg' => $this->faker->word(),
+            'bolsillo' => $this->faker->word(),
+            'clasico' => $this->faker->word(),
+            'muestraRaza' => $this->faker->word(),
+
+
             'image' => ''
         ];
     }

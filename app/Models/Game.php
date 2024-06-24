@@ -11,6 +11,24 @@ class Game extends Model
 
     use HasFactory;
 
-    protected $fillable = ['name', 'levels', 'release','image'];
+    protected $fillable = [
+        'registroAbkc',
+        'nombrePerro',
+        'fnac',
+        'sexo',
+        'nomDueno',
+        'direccion',
+        'ciudad',
+        'estado',
+        'correo',
+        'telefono',
+        'otraRaza',
+        'estandar',
+        'sg',
+        'bolsillo',
+        'clasico',
+        'muestraraza',
+        'image',
+    ];
 
 }
