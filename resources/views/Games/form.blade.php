@@ -6,6 +6,15 @@
     @if($errors->any())
     <div class="row">
         <div class="col-md-12">
+            @if($msj = Session::get('success'))
+            <div class="row" id="alerta">
+                <div class="col-md-4 offset-md-4">
+                    <div class="alert alert-success">
+                        <p><i class="fa-solid fa-check"></i>{{$msj}}</p>
+                    </div>
+                </div>
+            </div>
+            @endif
             <div class="alert alert-danger">
                 <p>
                     <b>
@@ -27,6 +36,12 @@
             <div class="card">
                 <div class="card-header">@yield('formName')</div>
                 <div class="card-body">
+                    @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
                     <form @yield('action') method="post" enctype="multipart/form-data">
                         @yield('method')
                         @csrf
@@ -166,3 +181,6 @@
         </div>
     </div>
 @endsection
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>

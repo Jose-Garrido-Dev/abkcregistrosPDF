@@ -66,9 +66,7 @@ class GameController extends Controller
             $game->image = 'img/default.jpg';
             $game->save();
         }
-
-
-        return redirect()->route('games.index')->with('success','Registro Creado');
+        return redirect()->route('principal')->with('success','Registro Creado');
     }
 
     /**
@@ -124,7 +122,7 @@ class GameController extends Controller
         }
 
         $game->update($request->input());
-        return redirect()->route('games.index')->with('success','Registro Actualizado');
+        return redirect()->route('home')->with('success','Registro Actualizado');
     }
 
     /**
@@ -134,7 +132,7 @@ class GameController extends Controller
     {
         Storage::disk('public')->delete($game->image);
         $game->delete();
-        return redirect()->route('games.index')->with('success','Registro eliminado');
+        return redirect()->route('home')->with('success','Registro eliminado');
     }
 
     public function exportPdf($id)

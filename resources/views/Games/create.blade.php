@@ -5,3 +5,16 @@
 @section('action')
     action= "{{route('games.store')}}"
 @endsection
+
+@push('scripts')
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                title: "¡Registro Creado!",
+                text: "{{ session('success') }}",
+                icon: "success"
+            });
+        </script>
+    @endif
+@endpush
+

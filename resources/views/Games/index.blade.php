@@ -15,7 +15,7 @@
     @endif
     <div class="row">
         <div class="col-12">
-            <div class="table-responsive  rounded-3">
+            <div class="table-responsive  rounded-">
                     <table class="table table-bordered table-hover">
                         <thead class="table-secondary">
                             <tr>
