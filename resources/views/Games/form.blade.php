@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fa-solid fa-calendar"></i> </span>
+                            <span class="input-group-text"><i class="fa-solid fa-calendar"></i> Fecha Nacimiento del Can </span>
                             <input type="date" class="form-control" name="fnac" placeholder="Fecha de Nacimiento" @isset($game) value={{$game->fnac}}  @endisset  required>
                         </div>
 
@@ -95,6 +95,13 @@
                             <input type="text" class="form-control" name="telefono" placeholder="Teléfono" @isset($game) value={{$game->telefono}}  @endisset required>
                         </div>
 
+                        <h5>Ingrese el nombre de la raza a presentar</h5>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa-solid fa-dog"></i> </span>
+                            <input type="text" class="form-control" name="muestraraza" placeholder="Muestra Raza" @isset($game) value={{$game->muestraraza}}  @endisset required>
+                        </div>
+
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="otraRaza"><i class="fa-solid fa-paw"></i> Otra Raza</label>
                             <select class="form-select" name="otraRaza" id="otraRaza">
@@ -109,6 +116,8 @@
                                 <option value="8">Campeón GR</option>
                             </select>
                         </div>
+
+                        <h5>American Bully</h5>
 
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="estandar"><i class="fa-solid fa-chart-bar"></i> Estandar</label>
@@ -126,7 +135,7 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="sg"><i class="fa-solid fa-sort-numeric-down"></i> SG</label>
+                            <label class="input-group-text" for="sg"><i class="fa-solid fa-sort-numeric-down"></i> XL</label>
                             <select class="form-select" name="sg" id="sg">
                                 <option value="">Seleccione una opción</option>
                                 <option value="1">9-12 meses</option>
@@ -139,7 +148,7 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="bolsillo"><i class="fa-solid fa-hand-holding"></i> Bolsillo</label>
+                            <label class="input-group-text" for="bolsillo"><i class="fa-solid fa-hand-holding"></i> Pocket</label>
                             <select class="form-select" name="bolsillo" id="bolsillo">
                                 <option value="">Seleccione una opción</option>
                                 <option value="1">1-2 años</option>
@@ -151,7 +160,7 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="clasico"><i class="fa-solid fa-star"></i> Clasico</label>
+                            <label class="input-group-text" for="clasico"><i class="fa-solid fa-star"></i> Clásico</label>
                             <select class="form-select" name="clasico" id="clasico">
                                 <option value="">Seleccione una opción</option>
                                 <option value="1">1-2 años</option>
@@ -162,10 +171,7 @@
                             </select>
                         </div>
 
-                        <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="fa-solid fa-dog"></i> </span>
-                            <input type="text" class="form-control" name="muestraraza" placeholder="Muestra Raza" @isset($game) value={{$game->muestraraza}}  @endisset required>
-                        </div>
+
                         <label for="formFile" class="form-label"><h6>Suba aquí imagen de su comprobante de pago:</h6></label>
                         <div class="input-group mb-3">
 
