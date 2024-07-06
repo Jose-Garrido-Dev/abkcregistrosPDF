@@ -56,16 +56,27 @@ class GameController extends Controller
 
         $game = Game::create($request->all());
 
-        if($request->hasFile('image')){
-            $nombre = $game->id.'.'.$request->file('image')->getClientOriginalExtension();
-            $img = $request->file('image')->storeAs('public/img',$nombre);
-            $game->image = '/img/'.$nombre;
-            $game->save();
-        } else {
-            // Optionally, set a default image path if not provided
-            $game->image = 'img/default.jpg';
-            $game->save();
-        }
+
+    // Guardar la primera imagen (image)
+    if ($request->hasFile('image')) {
+        $image1Name = $game->id . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('public/img', $image1Name);
+        $game->image = '/img/' . $image1Name;
+    } else {
+        $game->image = 'img/default.jpg';
+    }
+
+    // Guardar la segunda imagen (image2)
+    if ($request->hasFile('image2')) {
+        $image2Name = $game->id . '.' . $request->file('image2')->getClientOriginalExtension();
+        $request->file('image2')->storeAs('public/img/abkc', $image2Name);
+        $game->image2 = '/img/abkc/' . $image2Name;
+    } else {
+        $game->image2 = 'img/default.jpg';
+    }
+
+    // Guardar los cambios en la base de datos
+        $game->save();
         return redirect()->route('principal')->with('success','Registro Creado');
     }
 
@@ -113,15 +124,33 @@ class GameController extends Controller
     
 
         
-        if($request->hasFile('image')){
-            Storage::disk('public')->delete($game->image);
-            $nombre = $game->id.'.'.$request->file('image')->getClientOriginalExtension();
-            $img = $request->file('image')->storeAs('public/img',$nombre);
-            $game->image = '/img/'.$nombre;
-            $game->save();
-        }
+    // Actualizar los campos del modelo
+    $game->fill($request->all());
 
-        $game->update($request->input());
+    // Guardar la primera imagen (image)
+    if ($request->hasFile('image')) {
+        $image1Name = $game->id . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('public/img', $image1Name);
+        $game->image = '/img/' . $image1Name;
+    } else {
+        if (!$game->image) {
+            $game->image = 'img/default.jpg';
+        }
+    }
+
+    // Guardar la segunda imagen (image2)
+    if ($request->hasFile('image2')) {
+        $image2Name = $game->id . '.' . $request->file('image2')->getClientOriginalExtension();
+        $request->file('image2')->storeAs('public/img/abkc', $image2Name);
+        $game->image2 = '/img/abkc/' . $image2Name;
+    } else {
+        if (!$game->image2) {
+            $game->image2 = 'img/default.jpg';
+        }
+    }
+
+    // Guardar los cambios en la base de datos
+    $game->save();
         return redirect()->route('home')->with('success','Registro Actualizado');
     }
 

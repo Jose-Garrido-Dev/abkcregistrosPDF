@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('bolsillo', 80);
             $table->string('clasico', 80);
             $table->string('muestraraza', 80);
-            $table->string('image',255)->default('default.jpg');;
+            $table->string('image',255)->default('default.jpg');
             $table->timestamps();
         });
     }

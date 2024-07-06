@@ -110,14 +110,14 @@
                                     <label class="input-group-text" for="otraRaza"><i class="fa-solid fa-paw"></i> Otra Raza</label>
                                     <select class="form-select" name="otraRaza" id="otraRaza">
                                         <option value="">Seleccione una opción</option>
-                                        <option value="1">3-6 meses</option>
-                                        <option value="2">6-9 meses</option>
-                                        <option value="3">9-12 meses</option>
-                                        <option value="4">1-2 años</option>
-                                        <option value="5">2-3 años</option>
-                                        <option value="6">3 y más</option>
-                                        <option value="7">Campeón</option>
-                                        <option value="8">Campeón GR</option>
+                                        <option value="1" @selected(old('otraRaza', $game->otraRaza ?? '') == 1)>3-6 meses</option>
+                                        <option value="2" @selected(old('otraRaza', $game->otraRaza ?? '') == 2)>6-9 meses</option>
+                                        <option value="3" @selected(old('otraRaza', $game->otraRaza ?? '') == 3)>9-12 meses</option>
+                                        <option value="4" @selected(old('otraRaza', $game->otraRaza ?? '') == 4)>1-2 años</option>
+                                        <option value="5" @selected(old('otraRaza', $game->otraRaza ?? '') == 5)>2-3 años</option>
+                                        <option value="6" @selected(old('otraRaza', $game->otraRaza ?? '') == 6)>3 y más</option>
+                                        <option value="7" @selected(old('otraRaza', $game->otraRaza ?? '') == 7)>Campeón</option>
+                                        <option value="8" @selected(old('otraRaza', $game->otraRaza ?? '') == 8)>Campeón GR</option>
                                     </select>
                                 </div>
 
@@ -127,14 +127,14 @@
                                     <label class="input-group-text" for="estandar"><i class="fa-solid fa-chart-bar"></i> Estandar</label>
                                     <select class="form-select" name="estandar" id="estandar">
                                         <option value="">Seleccione una opción</option>
-                                        <option value="1">3-6 meses</option>
-                                        <option value="2">6-9 meses</option>
-                                        <option value="3">9-12 meses</option>
-                                        <option value="4">1-2 años</option>
-                                        <option value="5">2-3 años</option>
-                                        <option value="6">3 y más</option>
-                                        <option value="7">Estándar CH</option>
-                                        <option value="8">GR CH</option>
+                                        <option value="1" @selected(old('estandar', $game->estandar ?? '') == 1)>3-6 meses</option>
+                                        <option value="2" @selected(old('estandar', $game->estandar ?? '') == 2)>6-9 meses</option>
+                                        <option value="3" @selected(old('estandar', $game->estandar ?? '') == 3)>9-12 meses</option>
+                                        <option value="4" @selected(old('estandar', $game->estandar ?? '') == 4)>1-2 años</option>
+                                        <option value="5" @selected(old('estandar', $game->estandar ?? '') == 5)>2-3 años</option>
+                                        <option value="6" @selected(old('estandar', $game->estandar ?? '') == 6)>3 y más</option>
+                                        <option value="7" @selected(old('estandar', $game->estandar ?? '') == 7)>Estándar CH</option>
+                                        <option value="8" @selected(old('estandar', $game->estandar ?? '') == 8)>GR CH</option>
                                     </select>
                                 </div>
 
@@ -142,12 +142,12 @@
                                     <label class="input-group-text" for="sg"><i class="fa-solid fa-sort-numeric-down"></i> XL</label>
                                     <select class="form-select" name="sg" id="sg">
                                         <option value="">Seleccione una opción</option>
-                                        <option value="1">9-12 meses</option>
-                                        <option value="2">1-2 años</option>
-                                        <option value="3">2-3 años</option>
-                                        <option value="4">3 y más</option>
-                                        <option value="5">XL XL</option>
-                                        <option value="6">GR CH XL</option>
+                                        <option value="1" @selected(old('sg', $game->sg ?? '') == 1)>9-12 meses</option>
+                                        <option value="2" @selected(old('sg', $game->sg ?? '') == 2)>1-2 años</option>
+                                        <option value="3" @selected(old('sg', $game->sg ?? '') == 3)>2-3 años</option>
+                                        <option value="4" @selected(old('sg', $game->sg ?? '') == 4)>3 y más</option>
+                                        <option value="5" @selected(old('sg', $game->sg ?? '') == 5)>XL XL</option>
+                                        <option value="6" @selected(old('sg', $game->sg ?? '') == 6)>GR CH XL</option>
                                     </select>
                                 </div>
 
@@ -155,11 +155,11 @@
                                     <label class="input-group-text" for="bolsillo"><i class="fa-solid fa-hand-holding"></i> Pocket</label>
                                     <select class="form-select" name="bolsillo" id="bolsillo">
                                         <option value="">Seleccione una opción</option>
-                                        <option value="1">1-2 años</option>
-                                        <option value="2">2-3 años</option>
-                                        <option value="3">3 y más</option>
-                                        <option value="4">Bolsillo CH</option>
-                                        <option value="5">GR CH</option>
+                                        <option value="1" @selected(old('bolsillo', $game->bolsillo ?? '') == 1)>1-2 años</option>
+                                        <option value="2" @selected(old('bolsillo', $game->bolsillo ?? '') == 2)>2-3 años</option>
+                                        <option value="3" @selected(old('bolsillo', $game->bolsillo ?? '') == 3)>3 y más</option>
+                                        <option value="4" @selected(old('bolsillo', $game->bolsillo ?? '') == 4)>Bolsillo CH</option>
+                                        <option value="5" @selected(old('bolsillo', $game->bolsillo ?? '') == 5)>GR CH</option>
                                     </select>
                                 </div>
 
@@ -167,11 +167,11 @@
                                     <label class="input-group-text" for="clasico"><i class="fa-solid fa-star"></i> Clásico</label>
                                     <select class="form-select" name="clasico" id="clasico">
                                         <option value="">Seleccione una opción</option>
-                                        <option value="1">1-2 años</option>
-                                        <option value="2">2-3 años</option>
-                                        <option value="3">3 y más</option>
-                                        <option value="4">CH clásico</option>
-                                        <option value="5">GR CH</option>
+                                        <option value="1" @selected(old('clasico', $game->clasico ?? '') == 1)>1-2 años</option>
+                                        <option value="2" @selected(old('clasico', $game->clasico ?? '') == 2)>2-3 años</option>
+                                        <option value="3" @selected(old('clasico', $game->clasico ?? '') == 3)>3 y más</option>
+                                        <option value="4" @selected(old('clasico', $game->clasico ?? '') == 4)>CH clásico</option>
+                                        <option value="5" @selected(old('clasico', $game->clasico ?? '') == 5)>GR CH</option>
                                     </select>
                                 </div>
 
@@ -181,10 +181,10 @@
                                     <input type="file" class="form-control" name="image" accept="image/*" placeholder="Suba su Comprobante de pago"  @isset($game) required  @endisset>
                                 </div>
 
-                                <label for="formFile" class="form-label"><h6>Suba aquí imagen de su registro ABKC:</h6></label>
+                                <label for="formFile2" class="form-label"><h6>Suba aquí imagen de su registro ABKC:</h6></label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text"><i class="fa-solid fa-image"></i> </span>
-                                    <input type="file" class="form-control" name="image" accept="image/*" placeholder="Suba su Comprobante de pago"  @isset($game) required  @endisset>
+                                    <input type="file" class="form-control" name="image2" accept="image/*"   @isset($game) required  @endisset>
                                 </div>
 
                                 <button class="btn btn-success" type="submit"> Guardar </button>

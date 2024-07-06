@@ -32,7 +32,7 @@
               @endAuth
               @guest
               <li class="nav-item">
-                <a class="nav-link" href="{{url('games/create')}}">Crear </a>
+                <a class="nav-link" href="#">Crear </a>
               </li>
               @endguest
             </ul>
