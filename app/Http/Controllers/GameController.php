@@ -16,7 +16,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
+        $games = Game::paginate(10);
         
         return view('Games.index', compact('games'));
     }
@@ -52,6 +52,8 @@ class GameController extends Controller
         'bolsillo' => 'required|string|max:80',
         'clasico' => 'required|string|max:80',
         'muestraraza' => 'required|string|max:80',
+        'image' => 'nullable',
+        'image2' => 'nullable',
     ]);
 
         $game = Game::create($request->all());
@@ -63,7 +65,7 @@ class GameController extends Controller
         $request->file('image')->storeAs('public/img', $image1Name);
         $game->image = '/img/' . $image1Name;
     } else {
-        $game->image = 'img/default.jpg';
+        $game->image = NULL;
     }
 
     // Guardar la segunda imagen (image2)
@@ -72,7 +74,7 @@ class GameController extends Controller
         $request->file('image2')->storeAs('public/img/abkc', $image2Name);
         $game->image2 = '/img/abkc/' . $image2Name;
     } else {
-        $game->image2 = 'img/default.jpg';
+        $game->image2 = NULL;
     }
 
     // Guardar los cambios en la base de datos
@@ -120,6 +122,8 @@ class GameController extends Controller
             'bolsillo' => 'required|string|max:80',
             'clasico' => 'required|string|max:80',
             'muestraraza' => 'required|string|max:80',
+            'image' => 'nullable',
+            'image2' => 'nullable',
         ]);
     
 
@@ -134,7 +138,7 @@ class GameController extends Controller
         $game->image = '/img/' . $image1Name;
     } else {
         if (!$game->image) {
-            $game->image = 'img/default.jpg';
+            $game->image = 'img/default.png';
         }
     }
 
@@ -145,7 +149,7 @@ class GameController extends Controller
         $game->image2 = '/img/abkc/' . $image2Name;
     } else {
         if (!$game->image2) {
-            $game->image2 = 'img/default.jpg';
+            $game->image2 = 'img/abkc/default.png';
         }
     }
 

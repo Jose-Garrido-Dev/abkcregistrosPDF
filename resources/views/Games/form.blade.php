@@ -110,6 +110,7 @@
                                     <label class="input-group-text" for="otraRaza"><i class="fa-solid fa-paw"></i> Otra Raza</label>
                                     <select class="form-select" name="otraRaza" id="otraRaza">
                                         <option value="">Seleccione una opción</option>
+                                        <option value="0" @selected(old('otraRaza', $game->otraRaza ?? '') == 0)>No Aplica</option>
                                         <option value="1" @selected(old('otraRaza', $game->otraRaza ?? '') == 1)>3-6 meses</option>
                                         <option value="2" @selected(old('otraRaza', $game->otraRaza ?? '') == 2)>6-9 meses</option>
                                         <option value="3" @selected(old('otraRaza', $game->otraRaza ?? '') == 3)>9-12 meses</option>
@@ -124,9 +125,10 @@
                                 <h5>American Bully</h5>
 
                                 <div class="input-group mb-3">
-                                    <label class="input-group-text" for="estandar"><i class="fa-solid fa-chart-bar"></i> Estandar</label>
+                                    <label class="input-group-text" for="estandar"><i class="fa-solid fa-chart-bar"></i> Standard</label>
                                     <select class="form-select" name="estandar" id="estandar">
                                         <option value="">Seleccione una opción</option>
+                                        <option value="0" @selected(old('estandar', $game->estandar ?? '') == 0)>No aplica</option>
                                         <option value="1" @selected(old('estandar', $game->estandar ?? '') == 1)>3-6 meses</option>
                                         <option value="2" @selected(old('estandar', $game->estandar ?? '') == 2)>6-9 meses</option>
                                         <option value="3" @selected(old('estandar', $game->estandar ?? '') == 3)>9-12 meses</option>
@@ -142,6 +144,7 @@
                                     <label class="input-group-text" for="sg"><i class="fa-solid fa-sort-numeric-down"></i> XL</label>
                                     <select class="form-select" name="sg" id="sg">
                                         <option value="">Seleccione una opción</option>
+                                        <option value="0" @selected(old('sg', $game->sg ?? '') == 0)>No aplica</option>
                                         <option value="1" @selected(old('sg', $game->sg ?? '') == 1)>9-12 meses</option>
                                         <option value="2" @selected(old('sg', $game->sg ?? '') == 2)>1-2 años</option>
                                         <option value="3" @selected(old('sg', $game->sg ?? '') == 3)>2-3 años</option>
@@ -155,6 +158,7 @@
                                     <label class="input-group-text" for="bolsillo"><i class="fa-solid fa-hand-holding"></i> Pocket</label>
                                     <select class="form-select" name="bolsillo" id="bolsillo">
                                         <option value="">Seleccione una opción</option>
+                                        <option value="0" @selected(old('bolsillo', $game->bolsillo ?? '') == 0)>No aplica</option>
                                         <option value="1" @selected(old('bolsillo', $game->bolsillo ?? '') == 1)>1-2 años</option>
                                         <option value="2" @selected(old('bolsillo', $game->bolsillo ?? '') == 2)>2-3 años</option>
                                         <option value="3" @selected(old('bolsillo', $game->bolsillo ?? '') == 3)>3 y más</option>
@@ -167,6 +171,7 @@
                                     <label class="input-group-text" for="clasico"><i class="fa-solid fa-star"></i> Clásico</label>
                                     <select class="form-select" name="clasico" id="clasico">
                                         <option value="">Seleccione una opción</option>
+                                        <option value="0" @selected(old('clasico', $game->clasico ?? '') == 0)>No aplica</option>
                                         <option value="1" @selected(old('clasico', $game->clasico ?? '') == 1)>1-2 años</option>
                                         <option value="2" @selected(old('clasico', $game->clasico ?? '') == 2)>2-3 años</option>
                                         <option value="3" @selected(old('clasico', $game->clasico ?? '') == 3)>3 y más</option>

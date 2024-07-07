@@ -63,7 +63,7 @@
                                     <td>{{$row->clasico}}</td>--}}
                                     <td>{{$row->muestraraza}}</td>
                                     <td>
-                                        <img class="img-fluid" width="120" max-height="100" src="/storage/{{ $row->image }}">
+                                        <img class="img-fluid" width="120" max-height="100" src="{{ $row->image? asset('/storage/'. $row->image) : asset('img/default.png') }}" />
                                     </td>
                                     <td>
                                         <a class="btn btn-warning" href="{{route('games.edit',$row->id)}}">
@@ -92,6 +92,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $games->links() }}
             </div>
         </div>
     </div>

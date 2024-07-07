@@ -154,14 +154,14 @@
                 <div class="row mb-4 justify-content-center">
                     <div class="col-md-8 text-center">
                         <h3><strong>Comprobante de pago:</strong><br></h3>
-                        <img src="/storage/{{ $game->image }}" alt="Imagen de {{ $game->nombrePerro }}" class="img-fluid rounded" style="max-width: 100%; height: auto; max-height: 500px;">
+                        <img src="{{ asset($game->image? '/storage/'. $game->image : 'img/default.png') }}" alt="Imagen de {{ $game->nombrePerro }}" class="img-fluid rounded" style="max-width: 100%; height: auto; max-height: 500px;">
                     </div>
                 </div>
-
+                
                 <div class="row mb-4 justify-content-center">
                     <div class="col-md-8 text-center">
                         <h3><strong>Registro ABKC:</strong><br></h3>
-                        <img src="/storage/{{ $game->image2 }}" alt="Imagen de {{ $game->nombrePerro }}" class="img-fluid rounded" style="max-width: 100%; height: auto; max-height: 500px;">
+                        <img src="{{ asset($game->image2? '/storage/'. $game->image2 : 'img/default.png') }}" alt="Imagen de {{ $game->nombrePerro }}" class="img-fluid rounded" style="max-width: 100%; height: auto; max-height: 500px;">
                     </div>
                 </div>
 
