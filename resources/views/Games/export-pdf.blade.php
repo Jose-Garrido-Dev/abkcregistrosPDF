@@ -27,6 +27,28 @@
         font-family: Arial;
       }
 
+      .tabla-principal{
+        position: relative;
+        top: -41%;
+      }
+      
+      .table-title{
+        position: relative;
+        top: -50%;
+      }
+
+      .tabla-secundaria{
+        position: absolute;
+        top: 70%;
+        left:0;
+
+      }
+
+      .table-title2{
+        position: relative;
+        top: -40%;
+      }
+
       .title h2{
         border 1px solid #ccc;
       }
@@ -38,7 +60,7 @@
         }
         .title2 h2 {
             padding-top: 0px;
-            color:#ccc;
+            color:#5D6975;
             font-size: 80%;
             font-weight: bold;
             text-align: center;
@@ -59,46 +81,84 @@
         width: 90px;
       }
 
-      h1 {
-        border-top: 1px solid  #5D6975;
-        border-bottom: 1px solid  #5D6975;
-        color: #5D6975;
-        font-size: 2.4em;
+      .text-inicial {
+        position: relative;
+        top: -16%;
+        color: black;
+        font-size: 16px;
         line-height: 1.4em;
         font-weight: normal;
         text-align: center;
-        margin: 0 0 20px 0;
       }
 
       #project {
-        float: left;
+        position: relative;
+        top: -13%;
+        font-size: 23px;
+
+      }
+      .abkc{
+        position: relative;
+        top: -5%;
+        left: 13%;
+        width: 250px;
+        height: 30px;
+        margin:3px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 17px;
+        text-decoration: underline;
+        text-decoration-color: #CCCCCC;
+        background-color: #f9f9f9;
       }
 
-      #project span {
-        color: #5D6975;
-        text-align: right;
-        width: 52px;
-        margin-right: 10px;
-        display: inline-block;
-        font-size: 0.8em;
-      }
+
 
       #company {
         float: right;
         text-align: right;
-        margin-bottom: 10px;
+        border: black 5px double;
+
+      }
+      .shows{
+        position: relative;
+        top:-98px;
+        left: 19%;
+      }
+      
+      .shows2{
+        position: relative;
+        top:-21%;
+        left: 31%;
+      }
+
+      .show{
+        width: 30px;
+        height: 30px;
+        margin:3px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      .company2{
+        position: relative;
+        top: -20%;
       }
 
       #company2 {
         float: right;
         text-align: right;
         border: 1px solid #5D6975;
+        background-color: #f9f9f9;
+        padding: 2px;
       }
 
       #company2 p{
 
         text-align: center;
        padding: 1px;
+       background-color: rgb(216, 255, 77);
       }
 
       #project div,
@@ -139,13 +199,12 @@
       }
 
       footer {
-        color: #5D6975;
+        color: #000000;
         width: 100%;
         height: 30px;
-        position: fixed;
-        bottom: 0;
-        border-top: 1px solid #C1CED9;
+        position: absolute;
         padding: 8px 0;
+        margin-top:0%;
         text-align: center;
       }
     </style>
@@ -157,6 +216,7 @@
             <p>Nro. brazalete: _____________________</p>
         </div>
       </div>
+  </div>
     <header class="clearfix">
         <div class="logo">
             <?php
@@ -167,28 +227,58 @@
                 $logo64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
             ?>
             <img src="{{ $logo64 }}" width="100" height="100" alt="Logo">
+            <div class="shows">
+           
+              <SPAN>SHOW 1               
+                <div class="show">
+                x
+                </div>
+              </SPAN>
+
+              <SPAN>SHOW 2               
+                <div class="show">
+                x
+                </div>
+              </SPAN>
+            </div>
+        </div>
+        <div class="shows2">
+          <SPAN>SHOW 3               
+            <div class="show">
+            x
+            </div>
+          </SPAN>
+
+          <SPAN>SHOW 4               
+            <div class="show">
+            x
+            </div>
+          </SPAN>
         </div>
 
-      <h1>Registro ABKC</h1>
+
+      <span class="text-inicial"> No se pueden inscribir perros en un espectáculo organizado como un evento de ABKC sin un número de registro permanente de ABKC</span>
 
       <div id="project">
         <div class="title">
-            <h2>ABKC #    ___{{ $game->registroAbkc }}___</h2>
+          <div>ABKC # </div> <div class="abkc">{{ $game->registroAbkc }}</div>
         </div>
       </div>
-
-      <div id="company2">
-        <p>Verifique documentación ABKC</p>
-        <p>Tarjetas de cachorro no son aceptables</p>
+      <div class="company2">
+          <div id="company2">
+            <p>Verifique documentación ABKC</p>
+            <p>Tarjetas de cachorro no son aceptables</p>
+          </div>
       </div>
+
 
     </header>  
     <main>
-    <div style="text-align:center">
+    <div style="text-align:center" class="table-title">
         <h2>Datos de Registro</h2>
         <hr>
     </div>
-    <table>
+    <table class="tabla-principal">
         <thead>
             <tr>
                 <th>Nombre registrado del perro:</th>
@@ -235,13 +325,13 @@
         </tbody>
     </table>
 
-    <div style="text-align:center">
+    <div style="text-align:center" class="table-title2">
       <h4 style="margin-bottom: 0px;">COMPLETA LA INFORMACIÓN PARA ENTRAR AL EVENTO</h4>
       <h5>(Por favor seleccione clase, solo UNA clase por perro)</h5>
       <p style="font-size: 10px; color:#5D6975;">Requisitos de altura: Estandar machos: 17-20 hembras: 16-19 Bolsillo machos: 14-17 hembras: 13-16  XL machos 20-23" Hembras 19-22" </p>
       <hr>
-  </div>
-  <table>
+    </div>
+  <table class="tabla-secundaria">
       <thead>
           <tr>
               <th>Otra Raza:</th>
@@ -311,7 +401,7 @@
           <tr>
               <th>Bolsillo:</th>
               <th>Clásico:</th>
-              <th>Muestra Raza:</th>
+              <th>.</th>
           </tr>
       </thead>
       <tbody>
@@ -342,31 +432,45 @@
                     GR CH
                 @endif
               </td>
+              <td style="border-bottom:1px solid #ccc;"> 
 
-              <td style="border-bottom:1px solid #ccc;">
-                {{ $game->muestraraza }}
               </td>
           </tr>
       </tbody>
-  </table>
-    </main>
+
+      <thead>
+        <tr>
+            <th ><span style="background-color: rgb(216, 255, 77);">Muestra Raza:</span></th>
+        </tr>
+        <tr>
+         
+      </tr>
+      <tr>
+        
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="">
+              {{ $game->muestraraza }}
+             <div style="position: relative; top:-1%; color:#5D6975;">____________________________________________________________________</div> 
+            </td>
+            <td>
+     
+            </td>
+
+            </td>
+        </tr>
+    </tbody>
+   </table>
+ </main>
 
     <div id="notices">
-      <div style="text-align: center;">Texto Complementario:</div>
-      <div class="notice" style="text-align: center;">A finance charge of 1.5% will be made on unpaid balances after 30 days made on unpaid balances after 30 days</div>
-      <div class="notice" style="text-align: center;">A finance charge of 1.5% will be made on unpaid balances after 30 days made on unpaid balances after 30 days</div>
-      <div class="notice" style="text-align: center;">A finance charge of 1.5% will be made on unpaid balances after 30 days made on unpaid balances after 30 days</div>
-    </div>
-
-    <div id="notices">
-      <div style="text-align: center;">Texto Complementario 2:</div>
-      <div class="notice" style="text-align: center;">A finance charge of 1.5% will be made on unpaid balances after 30 days made on unpaid balances after 30 days</div>
-    </div>
-
-    <div id="notices" style="margin-bottom: 18px;">
-      <div style="text-align: left;"> Texto Complementario 2: </div>
-
-      <div class="notice" style="text-align: center;">A finance charge of 1.5% will be made on unpaid balances after 30 days made on unpaid balances after 30 days</div>
+      <div class="notice" style="text-align: center; font-size:8px;">The host club assume no responsability for any loss, damage or injury sustained by spectators or by exhibitors and handlers, or to  any of their dogs or propierty,
+        and further assume no responsability for injury to children not under the control of their parents or guardians. The host club is no responsible for loss, accidents or theft. By signing 
+        this form. I hereby agree to walve any claim, actions or labsuits resulting from my participation in this event, and any action, decision or judgement made by any host club 
+        representative or approved jugde. My signature indicates that I understand and agree to the avove.
+      </div>
     </div>
 
     <table>
@@ -379,15 +483,17 @@
     </thead>
     <tbody>
         <tr>
-            <td style=" text-align:center;">Firma 1</td>
-            <td style="text-align:center;">Firma 2</td>
+            <td style=" text-align:center;">Print Name of Owner</td>
+            <td style="text-align:center;">Signature of Owner</td>
             <td style="text-align:center;">Fecha</td>
         </tr>
     </tbody>
     </table>
 
-    <footer style="margin-top: 30px;">
-      Todos los derechos reservados ABKC Registros.
+    <footer style="text-align: center; font-size:10px; font-weight:bold;" >
+      Please also note: As the person completing and signing this form, you understand that you are responsible for entering your dog into the correct age group and category in order to
+      receive points that may apply. If your enter your dog into the incorrect age group and/or category. points may be forfeited. If you are unsure of this which age group and/or 
+      category your dog should be in, there is an ABKC Representative availible on-site to help you. By signing above, you acknowledge this information.
     </footer>
 </body>
 </html>
