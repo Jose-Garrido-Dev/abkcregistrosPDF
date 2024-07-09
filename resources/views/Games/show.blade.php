@@ -56,7 +56,9 @@
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <strong>Otra Raza:</strong> 
-                        @if($game->otraRaza == 1)
+                        @if($game->otraRaza == 0)
+                            No Aplica
+                        @elseif($game->otraRaza == 1)    
                             3-6 meses
                         @elseif($game->otraRaza == 2)
                             6-9 meses
@@ -75,8 +77,10 @@
                         @endif
                     </div>
                     <div class="col-md-6">
-                        <strong>Estándar:</strong> 
-                        @if($game->estandar == 1)
+                        <strong>Standard:</strong> 
+                        @if($game->estandar == 0)
+                            No Aplica
+                        @elseif($game->estandar == 1)    
                             3-6 meses
                         @elseif($game->estandar == 2)
                             6-9 meses
@@ -89,7 +93,7 @@
                         @elseif($game->estandar == 6)
                             3 y más
                         @elseif($game->estandar == 7)
-                            Estándar CH
+                            Standard CH
                         @elseif($game->estandar == 8)
                             GR CH
                         @endif
@@ -98,8 +102,10 @@
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <strong>SG:</strong> 
-                        @if($game->sg == 1)
+                        <strong>XL:</strong> 
+                        @if($game->sg == 0)
+                            No Aplica
+                        @elseif($game->sg == 1)    
                             9-12 meses
                         @elseif($game->sg == 2)
                             1-2 años
@@ -114,15 +120,17 @@
                         @endif
                     </div>
                     <div class="col-md-6">
-                        <strong>Bolsillo:</strong> 
-                        @if($game->bolsillo == 1)
+                        <strong>Pocket:</strong> 
+                        @if($game->bolsillo == 0)
+                            No Aplica
+                        @elseif($game->bolsillo == 1)    
                             1-2 años
                         @elseif($game->bolsillo == 2)
                             2-3 años
                         @elseif($game->bolsillo == 3)
                             3 y más
                         @elseif($game->bolsillo == 4)
-                            Bolsillo CH
+                            Pocket CH
                         @elseif($game->bolsillo == 5)
                             GR CH
                         @endif
@@ -131,15 +139,17 @@
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <strong>Clásico:</strong> 
-                        @if($game->clasico == 1)
+                        <strong>Classic:</strong> 
+                        @if($game->clasico == 0)
+                            No Aplica
+                        @elseif($game->clasico == 1)    
                             1-2 años
                         @elseif($game->clasico == 2)
                             2-3 años
                         @elseif($game->clasico == 3)
                             3 y más
                         @elseif($game->clasico == 4)
-                            CH clásico
+                            CH classic
                         @elseif($game->clasico == 5)
                             GR CH
                         @endif
@@ -161,7 +171,7 @@
                 <div class="row mb-4 justify-content-center">
                     <div class="col-md-8 text-center">
                         <h3><strong>Registro ABKC:</strong><br></h3>
-                        <img src="{{ asset($game->image2? '/storage/'. $game->image2 : 'img/default.png') }}" alt="Imagen de {{ $game->nombrePerro }}" class="img-fluid rounded" style="max-width: 100%; height: auto; max-height: 500px;">
+                        <img src="{{ $game->image2 ? asset('/storage/'. $game->image2) : asset('img/default.png') }}" alt="Sin Imagen de {{ $game->nombrePerro }}" class="img-fluid rounded" style="max-width: 100%; height: auto; max-height: 500px;">
                     </div>
                 </div>
 

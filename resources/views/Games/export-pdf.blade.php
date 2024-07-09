@@ -328,21 +328,23 @@
     <div style="text-align:center" class="table-title2">
       <h4 style="margin-bottom: 0px;">COMPLETA LA INFORMACIÓN PARA ENTRAR AL EVENTO</h4>
       <h5>(Por favor seleccione clase, solo UNA clase por perro)</h5>
-      <p style="font-size: 10px; color:#5D6975;">Requisitos de altura: Estandar machos: 17-20 hembras: 16-19 Bolsillo machos: 14-17 hembras: 13-16  XL machos 20-23" Hembras 19-22" </p>
+      <p style="font-size: 10px; color:#5D6975;">Requisitos de altura: Standard machos: 17-20 hembras: 16-19 Pocket machos: 14-17 hembras: 13-16  XL machos 20-23" Hembras 19-22" </p>
       <hr>
     </div>
   <table class="tabla-secundaria">
       <thead>
           <tr>
               <th>Otra Raza:</th>
-              <th>Estándar:</th>
-              <th>SG:</th>
+              <th>Standard:</th>
+              <th>XL:</th>
           </tr>
       </thead>
       <tbody>
           <tr>
               <td style="border-bottom:1px solid #ccc;"> 
-                @if($game->otraRaza == 1)
+                @if($game->otraRaza == 0)
+                No Aplica
+                @elseif($game->otraRaza == 1)
                 3-6 meses
                 @elseif($game->otraRaza == 2)
                     6-9 meses
@@ -361,7 +363,9 @@
                 @endif
               </td>
               <td style="border-bottom:1px solid #ccc;"> 
-                @if($game->estandar == 1)
+                @if($game->estandar == 0)
+                No Aplica
+                @elseif($game->estandar == 1)
                 3-6 meses
                 @elseif($game->estandar == 2)
                     6-9 meses
@@ -380,7 +384,9 @@
                 @endif
               </td>
               <td style="border-bottom:1px solid #ccc;">
-                @if($game->sg == 1)
+                @if($game->sg == 0)
+                No Aplica
+                @elseif($game->sg == 1)
                 9-12 meses
                 @elseif($game->sg == 2)
                     1-2 años
@@ -399,15 +405,17 @@
 
       <thead>
           <tr>
-              <th>Bolsillo:</th>
-              <th>Clásico:</th>
-              <th>.</th>
+              <th>Pocket:</th>
+              <th>Classic:</th>
+              <th> </th>
           </tr>
       </thead>
       <tbody>
           <tr>
               <td style="border-bottom:1px solid #ccc;"> 
-                @if($game->bolsillo == 1)
+                @if($game->bolsillo == 0)
+                No Aplica
+                @elseif($game->bolsillo == 1)
                 1-2 años
                 @elseif($game->bolsillo == 2)
                     2-3 años
@@ -418,10 +426,12 @@
                 @elseif($game->bolsillo == 5)
                     GR CH
                 @endif
-              </td>
+              </td> 
               <td style="border-bottom:1px solid #ccc;">
-                @if($game->clasico == 1)
-                1-2 años
+                @if($game->clasico == 0)
+                    No Aplica
+                @elseif($game->clasico == 1)
+                    1-2 años
                 @elseif($game->clasico == 2)
                     2-3 años
                 @elseif($game->clasico == 3)
