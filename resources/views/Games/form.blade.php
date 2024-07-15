@@ -184,12 +184,18 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text"><i class="fa-solid fa-image"></i> </span>
                                     <input type="file" class="form-control" name="image" accept="image/*" placeholder="Suba su Comprobante de pago"  @isset($game) required  @endisset>
+                                    @if(isset($game->image))
+                                        <img src="{{ asset('storage/' . $game->image) }}" alt="Imagen del comprobante de pago" width="100">
+                                    @endif
                                 </div>
 
                                 <label for="formFile2" class="form-label"><h6>Suba aquí imagen de su registro ABKC:</h6></label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text"><i class="fa-solid fa-image"></i> </span>
                                     <input type="file" class="form-control" name="image2" accept="image/*"   @isset($game) required  @endisset>
+                                    @if(isset($game->image2))
+                                        <img src="{{ asset('storage/' . $game->image2) }}" alt="Imagen del registro ABKC" width="100">
+                                    @endif
                                 </div>
 
                                 <button class="btn btn-success" type="submit"> Guardar </button>

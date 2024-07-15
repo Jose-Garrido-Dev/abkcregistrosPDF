@@ -52,8 +52,8 @@ class GameController extends Controller
         'bolsillo' => 'required|string|max:80',
         'clasico' => 'required|string|max:80',
         'muestraraza' => 'required|string|max:80',
-        'image' => 'nullable',
-        'image2' => 'nullable',
+        'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
         $game = Game::create($request->all());
@@ -122,8 +122,8 @@ class GameController extends Controller
             'bolsillo' => 'required|string|max:80',
             'clasico' => 'required|string|max:80',
             'muestraraza' => 'required|string|max:80',
-            'image' => 'nullable',
-            'image2' => 'nullable',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image2' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
 
